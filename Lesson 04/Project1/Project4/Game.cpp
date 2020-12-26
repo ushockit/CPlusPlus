@@ -45,9 +45,14 @@ void Game::printField()
 		for (int j = 0; j < FIELD_WIDTH; j++)
 		{
 			if (j == player->position.x && i == player->position.y) {
+				ColorConfig::setColor(playerColor);
 				std::cout << PLAYER_SYMB;
 			}
 			else {
+				if (gameField[i][j] == ROAD_NUM)
+					ColorConfig::setColor(roadColor);
+				else if (gameField[i][j] == BORDER_NUM)
+					ColorConfig::setColor(borderColor);
 				printSymb(gameField[i][j]);
 			}
 		}

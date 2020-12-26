@@ -2,6 +2,7 @@
 #include <iostream>
 #include <conio.h>
 #include "Player.h"
+#include "ColorConfig.h"
 
 #define BORDER_NUM 0
 #define BORDER_SYMB (char)178
@@ -20,6 +21,7 @@
 #define PLAYER_NUM 3
 #define PLAYER_SYMB (char)219
 
+
 class Game
 {
 public:
@@ -34,6 +36,10 @@ public:
 
 	void start();
 private:
+	ColorConfig::ConsoleColor playerColor = ColorConfig::ConsoleColor::Red;
+	ColorConfig::ConsoleColor roadColor = ColorConfig::ConsoleColor::White;
+	ColorConfig::ConsoleColor borderColor = ColorConfig::ConsoleColor::Green;
+
 	Player* player;
 	//int** gameField;			//игровое поле
 	int width;					//ширина поля
